@@ -6,7 +6,6 @@ import { FaCheck } from "react-icons/fa";
 import { useDeleteNoteMutation, useEditNotesMutation } from '../../redux/api/api';
 
 export default function NoteElem({note}) {
-  const [noteStatus, setNoteStatus] = useState(false) // срабатывает по нажатию на Галочку на задаче, типо отметка о выполнении
   const [editStatus, setEditStatus] = useState(false) //статус редактирования задачи
   const [editValue, setEditValue] = useState({
     title: '',
@@ -34,7 +33,7 @@ export default function NoteElem({note}) {
   console.log(note)
   
   return (
-    <div className={`${styles.main} ${noteStatus && styles.active}`}>
+    <div className={`${styles.main} ${note.status && styles.active}`}>
         <div className={styles.header}> 
           {editStatus ? // в зависимости от состояния editStatus будет видет или input или p  (режим редактирования по кнопке)
             <input 
@@ -69,7 +68,9 @@ export default function NoteElem({note}) {
           <div className={styles.tools}>
             <FaCheck 
               className={styles.btn} 
-              onClick={() => setNoteStatus(prev => !prev)}
+              onClick={() => editNotes({id: note.id, data: {
+                status: !note.status
+              }})}
             />
             <MdModeEditOutline 
               className={styles.btn}

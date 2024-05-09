@@ -16,6 +16,7 @@ export default function NoteCreateForm({setEditStatus}) {
         createNote({
           title: titleValue,
           note: textValue,
+          status: false,
         })
         setTitleValue('')
         setTextValue('')

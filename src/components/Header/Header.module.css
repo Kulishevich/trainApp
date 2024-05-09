@@ -4,10 +4,15 @@
     height: 60px;
     display: flex;
     padding: 5px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
 }
 .nav {
     display: flex;
     list-style: none;
+}
+.active {
+    border-bottom: 1px solid white;
 }
 .navElem {
     padding: 10px;

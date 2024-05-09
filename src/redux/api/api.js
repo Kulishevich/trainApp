@@ -12,6 +12,7 @@ export const api = createApi({
         getNotes: builder.query({
             query: () => '/',
             providesTags: ['Notes'],
+            transformResponse: (response) => response[0].notes,
         }),
         createNote: builder.mutation({
             query: (note) => ({

@@ -9,6 +9,7 @@ export default function Notes() {
 
   const { data, error, isLoading }  = useGetNotesQuery() //получаем(достаём) из RTK query данные 
 
+  console.log(data)
   return (
     <div className={styles.main}>
       <div className={styles.header}>
@@ -17,7 +18,7 @@ export default function Notes() {
       </div>
       <div className={styles.content}>
         {editStatus && <NoteCreateForm  setEditStatus={setEditStatus}/>}
-        {isLoading ? <h2>Загрузка...</h2> : data.map((elem, index) => <NoteElem key={index} note={elem}/>)}
+        {isLoading ? <h2>Загрузка...</h2> : data && data.map((elem, index) => <NoteElem key={index} note={elem}/>)}
       </div>
     </div>
   )
