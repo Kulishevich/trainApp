@@ -1,0 +1,53 @@
+.main {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.182);
+    margin-bottom: 20px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.182);
+    width: 60%;
+}
+.header h1{
+    margin-right: 50px;
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.header h3{
+    align-items: center;
+}
+.results {
+    display: flex;
+}
+.results p{
+    width: 500px;
+    display: flex;
+    align-items: center;
+}
+.result {
+    background-color: white;
+    padding: 5px 10px;
+    color: black;
+    border-radius: 5px; 
+}
+.editPanel {
+    display: flex;
+    align-items: center;
+}
+.btn {
+    font-size: 33px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 5px;
+}
+.btn:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}

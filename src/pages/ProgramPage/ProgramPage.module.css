@@ -1,0 +1,30 @@
+.main {
+
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 500px;
+    height: 350px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    z-index: 2;
+    font-size: 65px;
+    background-color: rgba(0, 0, 0, 0.504);
+    border-radius: 10px;
+    padding: 20px;
+}
+.text {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.image {
+    width: 500px;
+    position: absolute;
+    z-index: 0;
+}

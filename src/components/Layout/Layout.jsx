@@ -6,7 +6,7 @@ import styles from './Layout.module.css'
 export default function Layout() {
   return (
     <div className={styles.main}>
-      <img src="images/image2.jpg" alt="" className={styles.image}/>
+      <img src="/images/image2.jpg" alt="" className={styles.image}/>
       <div className={styles.container}>
         <Header/>
         <Outlet/>
