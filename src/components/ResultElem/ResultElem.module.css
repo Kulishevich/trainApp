@@ -3,6 +3,7 @@
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.182);
     margin-bottom: 20px;
+    width: 49%;
 }
 .header {
     display: flex;
@@ -11,10 +12,10 @@
     padding: 5px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.182);
-    width: 60%;
+    width: 100%;
 }
-.header h1{
-    margin-right: 50px;
+.header h1{ 
+    margin-right: 30px;
     background-color: white;
     color: black;
     padding: 5px 10px;
@@ -24,18 +25,19 @@
     align-items: center;
 }
 .results {
-    display: flex;
 }
 .results p{
-    width: 500px;
+    width: 100%;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 .result {
     background-color: white;
     padding: 5px 10px;
     color: black;
     border-radius: 5px; 
+    margin-left: 5px;
 }
 .editPanel {
     display: flex;
