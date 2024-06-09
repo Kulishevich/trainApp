@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './Header.module.css'
 import { Link, NavLink } from 'react-router-dom'
 
-const navMenu = ['Главная', 'Программа тренировок', 'Результаты', 'Заметки']
-const navRoutes = ['/', 'program', 'result', 'notes']
+const navMenu: string[] = ['Главная', 'Программа тренировок', 'Результаты', 'Заметки']
+const navRoutes: string[] = ['/', 'program', 'result', 'notes']
 
-export default function Header() {
+export const Header: FC = () => {
   return (<>
       <div className={styles.main}>
         <nav className={styles.nav}>

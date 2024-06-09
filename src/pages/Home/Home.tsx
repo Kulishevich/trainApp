@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './Home.module.css'
 import { useNavigate } from 'react-router-dom'
 
-export default function Home() {
+export const Home: FC = () => {
   const navigate = useNavigate()
 
   return (

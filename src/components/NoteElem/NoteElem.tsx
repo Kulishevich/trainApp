@@ -1,19 +1,23 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import styles from './NoteElem.module.css'
 import { MdModeEditOutline } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { FaCheck } from "react-icons/fa";
-import { useDeleteNoteMutation, useEditNotesMutation } from '../../redux/api/api';
+import { NoteElemType } from 'types/types';
 
-export default function NoteElem({note}) {
-  const [editStatus, setEditStatus] = useState(false) //статус редактирования задачи
-  const [editValue, setEditValue] = useState({
+interface NoteElemProps{
+  note: NoteElemType
+}
+
+export const NoteElem: FC<NoteElemProps> = ({note}) => {
+  const [editStatus, setEditStatus] = useState<boolean>(false) //статус редактирования задачи
+  const [editValue, setEditValue] = useState<{
+    title: string,
+    note: string
+  }>({
     title: '',
     note: ''
   })
-
-  const [deleteNote] = useDeleteNoteMutation()
-  const [editNotes] = useEditNotesMutation()
   
   const toggleStatusEdit = () => {
     setEditStatus(true)
@@ -23,11 +27,7 @@ export default function NoteElem({note}) {
     })
   }
 
-  const handleEditNote = (id) => {
-    editNotes({id, data: {
-      title: editValue.title,
-      note: editValue.note,
-    }})
+  const handleEditNote = (id : number) => {
     setEditStatus(false)
   }
   console.log(note)

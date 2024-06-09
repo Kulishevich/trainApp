@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './ProgramElem.module.css'
 import { Link } from 'react-router-dom'
+import { NoteElemType, ProgramElemType } from 'types/types'
 
-export default function ProgramElem({elem, index}) {
+interface ProgramElemProps {
+  elem: ProgramElemType,
+  index: number
+}
+
+export const ProgramElem: FC<ProgramElemProps> = ({elem, index}) => {
   return (
     <div className={styles.main}>
         <div className={styles.container}>

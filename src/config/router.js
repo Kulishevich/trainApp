@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home/Home";
-import Programs from "../pages/Programs/Programs";
-import Layout from "../components/Layout/Layout";
-import Result from "../pages/Result/Result";
-import Notes from "../pages/Notes/Notes";
-import ProgramPage from "../pages/ProgramPage/ProgramPage";
+import { Layout } from "../components/Layout/Layout.tsx";
+import { Home } from "../pages/Home/Home.tsx";
+import { Result } from "../pages/Result/Result.tsx";
+import { Programs } from "../pages/Programs/Programs.tsx";
+import { Notes } from "../pages/Notes/Notes.tsx";
+import { ProgramPage } from "../pages/ProgramPage/ProgramPage.tsx";
 
 export const router = createBrowserRouter([
     {

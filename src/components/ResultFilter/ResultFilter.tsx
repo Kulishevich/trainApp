@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './ResultFilter.module.css'
 
-export default function ResultFilter({activeFilter, setActiveFilter, filter}) {
+interface ResultFilterProps {
+  activeFilter:  number,
+  setActiveFilter:  (index: number) => void,
+  filter: string[],
+}
 
+export const ResultFilter: FC<ResultFilterProps> = ({activeFilter, setActiveFilter, filter}) => {
 
     return (
     <div className={styles.main}>

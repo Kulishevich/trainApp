@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import styles from './Notes.module.css'
+//@ts-ignore
 import { useGetNotesQuery } from '../../redux/api/api'
-import NoteElem from '../../components/NoteElem/NoteElem'
-import NoteCreateForm from '../../components/NoteCreateForm/NoteCreateForm'
+import { NoteElem } from '../../components/NoteElem/NoteElem'
+import { NoteCreateForm } from '../../components/NoteCreateForm/NoteCreateForm'
 
-export default function Notes() {
-  const [editStatus, setEditStatus] = useState(false)
+export const Notes: FC = () => {
+  const [editStatus, setEditStatus] = useState<boolean>(false)
 
   const { data, error, isLoading }  = useGetNotesQuery() //получаем(достаём) из RTK query данные 
 

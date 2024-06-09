@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { programs } from '../../data/programs'
 import styles from './ProgramPage.module.css'
 
-export default function ProgramPage() {
-  const { id } = useParams()
-  const program = programs[id]
+export const ProgramPage: FC = () => {
+  const { id } = useParams<string>()
+  const program = programs[Number(id)]  
+
   const navigate = useNavigate()
     return (
     <div className={styles.main}>

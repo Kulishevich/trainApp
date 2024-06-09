@@ -1,23 +1,18 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import styles from './NoteCreateForm.module.css'
 import { IoMdClose } from "react-icons/io";
 import { FaCheck } from "react-icons/fa";
-import { useCreateNoteMutation } from '../../redux/api/api';
 
+interface NoteCreateFormProps {
+  setEditStatus: (toggle: boolean) => void
+}
 
-export default function NoteCreateForm({setEditStatus}) {
-    const [titleValue, setTitleValue] = useState('')
-    const [textValue, setTextValue] = useState('')
-
-    const [createNote] = useCreateNoteMutation()
+export const NoteCreateForm: FC<NoteCreateFormProps> = ({setEditStatus}) => {
+    const [titleValue, setTitleValue] = useState<string>('')
+    const [textValue, setTextValue] = useState<string>('')
 
     const addNewNote = () => {
       if(titleValue && textValue) {
-        createNote({
-          title: titleValue,
-          note: textValue,
-          status: false,
-        })
         setTitleValue('')
         setTextValue('')
         setEditStatus(false)

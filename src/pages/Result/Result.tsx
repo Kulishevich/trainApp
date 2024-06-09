@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { useGetResultQuery } from '../../redux/api/api'
 import styles from './Result.module.css'
-import ResultElem from '../../components/ResultElem/ResultElem'
-import ResultFilter from '../../components/ResultFilter/ResultFilter'
+import {ResultElem} from '../../components/ResultElem/ResultElem'
+import {ResultFilter} from '../../components/ResultFilter/ResultFilter'
 
-const filter = ['all','chest','triceps','back']
+const filter = ['all','chest','triceps','back', 'bicepc', 'legs', 'shoulders']
 const images = ['/images/chest.jpeg', '/images/triceps.jpg', '/images/back.jpg', '/images/bicepc.jpg']
 
-export default function Result() {
+export const Result: FC = () => {
   const [activeFilter, setActiveFilter] = useState(0)
   
   const { data, error, isLoading } = useGetResultQuery()

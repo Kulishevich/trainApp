@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import styles from './ResultElem.module.css'
+// @ts-ignore
 import { useEditResultMutation } from '../../redux/api/api'
 import { FaCheck } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import { ResultElemType } from 'types/types';
 
+interface ResultElemProps{
+  elem: ResultElemType
+}
 
-
-export default function ResultElem({elem}) {
+export const ResultElem: FC<ResultElemProps> = ({elem}) => {
   const [value, setValue] = useState({ // state хранения данных result и maxResult
     result: elem.result,
     maxResult: elem.maxResult,
